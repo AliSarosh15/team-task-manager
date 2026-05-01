@@ -1,0 +1,32 @@
+# Virtual Environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables (IMPORTANT)
+.env
+
+# VS Code settings (optional)
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database (if using SQLite)
+*.db
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+
+# Migrations (optional if using Alembic)
+alembic/versions/*.py
