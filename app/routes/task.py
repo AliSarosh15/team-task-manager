@@ -19,12 +19,12 @@ def create_task(
     db: Session = Depends(get_db),
     user=Depends(admin_required)
 ):
-    # ✅ Validate project
+    # Validate project
     project = db.query(Project).filter(Project.id == data.project_id).first()
     if not project:
         raise HTTPException(status_code=400, detail="Project not found")
 
-    # ✅ Validate user
+    # Validate user
     assigned_user = db.query(User).filter(User.id == data.assigned_to).first()
     if not assigned_user:
         raise HTTPException(status_code=400, detail="User not found")

@@ -10,7 +10,7 @@ from app.auth import hash_password, verify_password, create_access_token
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
 
-# ✅ SIGNUP
+# SIGNUP
 @router.post("/signup")
 def signup(data: UserCreate, db: Session = Depends(get_db)):
     user_exists = db.query(User).filter(User.username == data.username).first()
@@ -30,7 +30,7 @@ def signup(data: UserCreate, db: Session = Depends(get_db)):
     return {"message": "User created successfully"}
 
 
-# ✅ LOGIN (🔥 THIS FIXES YOUR 422 ERROR)
+# LOGIN 
 @router.post("/login")
 def login(
     form_data: OAuth2PasswordRequestForm = Depends(),   # ✅ IMPORTANT

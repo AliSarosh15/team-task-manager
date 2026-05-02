@@ -6,8 +6,7 @@ from app.models import Task
 from app.database import get_db
 from app.dependencies import get_current_user
 
-router = APIRouter(prefix="/dashboard", tags=["Dashboard"])
-
+router = APIRouter()
 
 @router.get("/")
 def dashboard(
