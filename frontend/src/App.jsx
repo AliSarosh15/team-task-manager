@@ -1,7 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
 
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
-const BASE_URL = import.meta.env.VITE_API_URL; // 🔁 REPLACE WITH YOUR DEPLOYED URL
+const BASE_URL = import.meta.env.VITE_API_URL;
+
+const api = {
+  request: async (path, options = {}) => {
+    const res = await fetch(`${BASE_URL}${path}`, options);
+    return res.json();
+  },
+}; // 🔁 REPLACE WITH YOUR DEPLOYED URL
 
 // ─── API HELPERS ──────────────────────────────────────────────────────────────
 const api = {
