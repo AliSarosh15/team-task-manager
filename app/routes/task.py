@@ -9,6 +9,9 @@ from ..dependencies import get_current_user, admin_required
 
 router = APIRouter()
 
+@router.get("/users/")
+def get_users(db: Session = Depends(get_db), user=Depends(admin_required)):
+    return db.query(User).all()
 
 @router.post("/")
 def create_task(
