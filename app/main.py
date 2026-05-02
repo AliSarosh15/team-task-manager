@@ -3,7 +3,9 @@ from .database import engine, Base
 from .routes import user, project, task, dashboard
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
-
+@app.get("/")
+def home():
+    return {"message": "Team Task Manager API is live 🚀"}
 
 app.add_middleware(
     CORSMiddleware,
