@@ -29,11 +29,11 @@ const api = {
     }
     return res.json();
   },
-  async signup(username, password, role) {
+  async signup(username,email, password, role) {
     return api.request("/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password, role }),
+      body: JSON.stringify({ username,email, password, role }),
     });
   },
   async getDashboard() { return api.request("/dashboard/"); },
@@ -660,7 +660,7 @@ const styles = `
 // ─── AUTH PAGE ────────────────────────────────────────────────────────────────
 function AuthPage({ onLogin }) {
   const [tab, setTab] = useState("login");
-  const [form, setForm] = useState({ username: "", password: "", role: "member" });
+  const [form, setForm] = useState({ username: "",email: "", password: "", role: "member" });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
@@ -678,7 +678,7 @@ function AuthPage({ onLogin }) {
         const payload = decodeToken(data.access_token);
         onLogin({ ...payload, username: form.username });
       } else {
-        await api.signup(form.username, form.password, form.role);
+        await api.signup(form.username, form.email, form.password, form.role);
         setSuccess("Account created! Please log in.");
         setTab("login");
         setForm((f) => ({ ...f, password: "" }));
@@ -727,6 +727,16 @@ function AuthPage({ onLogin }) {
             <label className="form-label">Username</label>
             <input className="form-input" value={form.username} onChange={handle("username")} placeholder="your_username" onKeyDown={(e) => e.key === "Enter" && handleSubmit()} />
           </div>
+          <div className="form-group">
+  <label className="form-label">Email</label>
+  <input
+    type="email"
+    className="form-input"
+    value={form.email || ""}
+    onChange={handle("email")}
+    placeholder="Enter your email"
+  />
+</div>
           <div className="form-group">
             <label className="form-label">Password</label>
             <input className="form-input" type="password" value={form.password} onChange={handle("password")} placeholder="••••••••" onKeyDown={(e) => e.key === "Enter" && handleSubmit()} />
