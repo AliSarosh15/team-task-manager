@@ -2,7 +2,8 @@ import { useState, useEffect, useCallback } from "react";
 
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
 const API_BASE = import.meta.env.VITE_API_URL;
-
+console.log("sdfdsfsghskjhsf=----------------------------------------------------------------------------------")
+console.log(import.meta.env.VITE_API_URL);
 const api = {
   request: async (path, options = {}) => {
     const res = await fetch(`${BASE_URL}${path}`, options);
