@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
-const API_BASE = "http://localhost:8000"; // 🔁 REPLACE WITH YOUR DEPLOYED URL
+const BASE_URL = import.meta.env.VITE_API_URL; // 🔁 REPLACE WITH YOUR DEPLOYED URL
 
 // ─── API HELPERS ──────────────────────────────────────────────────────────────
 const api = {
