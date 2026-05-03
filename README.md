@@ -209,7 +209,7 @@ VITE_API_URL=https://your-backend-url
 
 ## 🎥 Demo Video
 
-📽️ (Add your 2–5 min demo video link here)
+📽️ (https://drive.google.com/file/d/1qjg52O2KzUrkziUdwb0dcrJprSfpvk1d/view?usp=drivesdk)
 
 ---
 
@@ -226,6 +226,7 @@ VITE_API_URL=https://your-backend-url
 
 Ali Sarosh
 BTech CSE – Backend Developer (Python)
+Integral University
 
 ---
 
