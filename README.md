@@ -69,8 +69,9 @@ Built as part of an assignment, this project demonstrates backend API developmen
 * Frontend: Vercel
 
 ---
+Team Task Manager – Full Project Structure
 
-team-task-manager/
+taskforge/
 │
 ├── app/                     # 🔥 Backend (FastAPI)
 │   ├── routes/
